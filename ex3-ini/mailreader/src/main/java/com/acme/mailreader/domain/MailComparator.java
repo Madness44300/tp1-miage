@@ -28,6 +28,16 @@ public class MailComparator implements Comparator<Mail> {
 		if (pasLeMemeSujet(mail1, mail2)) {
 			return trierParSujet(mail1, mail2);
 		}
+		return pasMemeDate(mail1, mail2);
+	}
+
+	private int pasMemeDate(Mail mail1, Mail mail2) {
+		if (mail1.getDate() == null && mail2.getDate() != null) {
+			return PREMIER_PLUS_PETIT;
+		}
+		if (mail1.getDate() != null && mail2.getDate() == null) {
+			return PREMIER_PLUS_GRAND;
+		}
 		return mail1.getDate().compareTo(mail2.getDate());
 	}
 
