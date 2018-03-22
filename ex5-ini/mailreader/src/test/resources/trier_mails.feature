@@ -22,6 +22,11 @@ Examples:
 | true       | true	      | PAS_ENVOYE | LU      | aaaaa			| bbbbbb 		| 2017-01-01T14:03:00Z | 2017-01-01T14:03:34Z | MAIL1_APRES |
 | true       | true	      | LU		   | LU      | aaaaa			| aaaaa 		| 2017-01-01T14:03:00Z | 2017-01-01T14:03:34Z | MAIL1_AVANT | 
 | true       | true	      | ENVOYE	   | LU      | aaaab			| aaaaa 		| 2017-01-01T14:03:00Z | 2017-01-01T14:03:34Z | MAIL1_APRES | 
+| true       | true	      | ENVOYE	   | ENVOYE  | aaaab			| aaaaa 		| 2017-01-01T14:03:00Z | 2017-01-01T14:03:34Z | MAIL1_APRES | 
+| false      | true	      | ENVOYE	   | ENVOYE  | aaaaa			| aaaaa 		| 2017-01-01T14:03:00Z | 2017-01-01T14:03:34Z | MAIL1_APRES | 
+| false      | false	  | ENVOYE	   | ENVOYE  | aaaaa			| aaaaa 		| 2017-01-01T14:03:00Z | 2015-01-01T14:03:34Z | MAIL1_APRES | 
+| false      | false	  | ENVOYE	   | ENVOYE  | aaaaa			| aaaaa 		| 2017-01-01T14:03:00Z | 2017-01-01T14:03:00Z | EGAUX		|
+
 
     
     
@@ -31,6 +36,7 @@ Given les mails :
 | true       | PAS_ENVOYE 		 | aaaaa					| 2017-01-01T14:03:00Z |
 | false      | PAS_ENVOYE 		 | aaaaa					| 2017-01-01T14:03:00Z |
 | false      | LU		 		 | bbbbb					| 2016-12-01T14:03:00Z |
+
 
 When je trie
 Then la liste ordonnée doit être :
