@@ -3,9 +3,12 @@ package com.acme.mailreader.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Singleton;
+
 import com.acme.mailreader.domain.Mail;
 import com.acme.mailreader.utils.MailInvalideException;
 import com.acme.mailreader.utils.MailInvalideException.ErreurMail;
+import com.google.inject.Inject;
 import com.acme.mailreader.utils.MailSender;
 
 public class MailService {
@@ -16,8 +19,10 @@ public class MailService {
 	private MailSender sender;
 	
 	
+	@Inject
 	public MailService(MailSender sender) {
 		super();
+		this.sender = sender;
 	}
 
 	/**
