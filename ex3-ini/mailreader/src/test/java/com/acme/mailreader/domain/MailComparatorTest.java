@@ -44,7 +44,7 @@ public class MailComparatorTest {
 		assertThat(comparator.compare(mail, otherMail), is(1));		
 	}
 	
-	@Test
+	/*@Test
 	public final void MailsIdentiques() throws DateIncorrecteException {
 
 		Mail mail = new Mail.Builder("sujet").statut(Statut.SENT).important(true).build();
@@ -52,6 +52,15 @@ public class MailComparatorTest {
 		
 		assertThat(comparator.compare(mail, otherMail),is(MailComparator.EGAUX));
 	}
+	*/
+	@Test
+	public final void ordreAlphabetiqueSiMemeImportance() {
+		Mail mail1 = new Mail.Builder("sujet").important(true).build();
+		Mail mail2 = new Mail.Builder("sujet").important(false).build();
+		assertThat(mail1, not(nullValue()));
+		assertThat(comparator.compare(mail1, mail2), is(MailComparator.PREMIER_PLUS_GRAND));		
+	}
+	
 
 	
 }
